@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  root "homepage#index"
-  #get 'demo/index'
+  get 'demo/index'
+
+  # root "homepage#index"
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
