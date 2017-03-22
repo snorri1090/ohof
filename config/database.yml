@@ -12,7 +12,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: #ohof_test
+  database: ohof_development
   pool: 5
   username: postgres
   password:
