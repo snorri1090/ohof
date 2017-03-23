@@ -1,0 +1,12 @@
+= link_to("<< Back to List", {action: 'index'}, class: 'back link')
+
+.subjects.new
+  %h2
+
+  = form_for(:subject, url: action: 'create') do |f|
+
+    %table{summary: "Location form fields"}
+      %tr
+        %th Name
+        %td= f.text_field(:name)
+      %tr Position

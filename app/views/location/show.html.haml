@@ -1,0 +1,35 @@
+= link_to("<< Back to List", {action: 'index'}, class: 'back link')
+
+.subjects.show
+  %h2 Show locations
+
+  %table{summary: 'Locations detail view'}
+    %tr
+      %th name
+      %td= @location.name
+    %tr
+      %th position
+      %td= @location.position
+    %tr
+      %th sub location
+      %td= @location.sub_location
+    %tr
+      %th Location category
+      %td= @location.category
+    %tr
+      %th WiFi?
+      %td= @location.wifi ? 'Yes' : 'No'
+    %tr
+      %th Power Supply?
+      %td= @location.power ? 'Yes' : 'No'
+    %tr
+      %th Coffee or Food?
+      %td
+        = @location.coffee ? 'Yes' : 'No'
+        = @location.food ? 'Yes' : 'No'
+    %tr
+      %th Created at
+      %td= @location.created_at
+    %tr
+      %th Updated at
+      %td= @location.updated_at

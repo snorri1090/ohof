@@ -1,0 +1,30 @@
+.subjects.index
+  %h2 Ohof Locations Index
+  = link_to("Add New Location", {action: 'new'}, class: 'action new')
+
+  %table.listing{summary: "Location list"}
+    %tr.header
+      %th &#032;
+      %th Name
+      %th Sub
+      %th Category
+      %th Wifi
+      %th Power
+      %th Coffee
+      %th Food
+      %th Actions
+
+    = @locations.each do |location|
+      %tr
+        %td= location.position
+        %td= location.name
+        %td.center= location.sub_location
+        %td.center= location.category
+        %td.center= location.wifi ? 'Yes' : 'No'
+        %td.center= location.power ? 'Yes' : 'No'
+        %td.center= location.coffee ? 'Yes' : 'No'
+        %td.center= location.food ? 'Yes' : 'No'
+        %td.actions
+          = link_to("Show", {action: 'show', id: location.id}, class: "action show")
+          = link_to("Edit", {action: 'edit', :id => location.id}, class: "action edit")
+          = link_to("Delete", {action: 'destroy', id: location.id}, class: "action delete")
