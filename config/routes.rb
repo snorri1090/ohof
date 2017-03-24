@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'root/index'
 
   get 'demo/index'
-
+  get 'location/index'
   # You can have the root of your site routed with "root"
   root 'root#index'
 
