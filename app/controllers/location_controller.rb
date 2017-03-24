@@ -37,6 +37,12 @@ class LocationController < ApplicationController
   end
 
   def delete
+    @location = Location.find(params[:id])
+  end
+
+  def destroy
+    location = Location.find(params[:id]).destroy
+    redirect_to(action: 'index')
   end
 
   private

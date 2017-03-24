@@ -14,7 +14,7 @@
       %th Food
       %th Actions
 
-    = @locations.each do |location|
+    - @locations.each do |location|
       %tr
         %td= location.position
         %td= location.name
@@ -27,4 +27,4 @@
         %td.actions
           = link_to("Show", {action: 'show', id: location.id}, class: "action show")
           = link_to("Edit", {action: 'edit', :id => location.id}, class: "action edit")
-          = link_to("Delete", {action: 'destroy', id: location.id}, class: "action delete")
+          = link_to("Delete", {action: 'delete', id: location.id}, class: "action delete")
