@@ -1,7 +1,5 @@
 class LocationController < ApplicationController
 
-  layout false
-
   def index
     @locations = Location.sorted
   end
