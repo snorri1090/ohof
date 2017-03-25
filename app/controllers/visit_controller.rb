@@ -1,4 +1,4 @@
-class VisitsController < ApplicationController
+class VisitController < ApplicationController
 
   def index
     @visits = Visit.all
