@@ -11,6 +11,3 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require jquery-migrate-1.4.1.min
-//= require jquery-ui
-//= require ui

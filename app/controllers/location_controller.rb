@@ -9,7 +9,7 @@
   end
 
   def new
-    @location = Location.new({name: 'Default'})
+    @location = Location.new({name: ''})
   end
 
   def create
@@ -47,5 +47,4 @@
     def location_params
       params.require(:location).permit(:name, :position, :sub_location, :category, :wifi, :power, :coffee, :food)
     end
-
 end

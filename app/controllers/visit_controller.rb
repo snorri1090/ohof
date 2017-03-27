@@ -13,7 +13,7 @@ class VisitController < ApplicationController
   end
 
   def create
-    @visit = Visit.new(location_params)
+    @visit = Visit.new(visit_params)
     if @visit.save
       redirect_to(action: 'index')
     else
