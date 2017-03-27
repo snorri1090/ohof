@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'visit/index'
+  get 'visit/new'
   get 'location/index'
 
   get 'root/index'

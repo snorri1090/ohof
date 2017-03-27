@@ -1,4 +1,4 @@
-class LocationController < ApplicationController
+  class LocationController < ApplicationController
 
   def index
     @locations = Location.sorted

@@ -9,7 +9,7 @@ class VisitController < ApplicationController
   end
 
   def new
-    @visit = Visit.new({name: 'Default'})
+    @visit = Visit.new({date: ''})
   end
 
   def create

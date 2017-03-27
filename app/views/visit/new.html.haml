@@ -1,0 +1,26 @@
+%h1 Add a New OHOF Visit
+
+%h2 Location
+%ul
+  %li Add a New Location
+  %li Use an existing Location
+
+%h2 Visit Details
+%input{id: "date", type: "text"}
+= form_for(:visit, url: {action: 'create'}) do |f|
+  %ul
+    %li
+      date
+      %ul
+        %li= f.text_field(:date, class: "datepicker")
+    %li community
+    %li work
+    %li other comments
+
+
+%button Submit
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"}
+%script{:src => "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"}
+%script{type: "text/javascript"}
+  $('#date').datepicker({
+  });
