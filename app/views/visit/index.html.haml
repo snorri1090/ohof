@@ -1,3 +1,12 @@
+%ul
+  %li
+    = link_to("Home", '/')
+  %li
+    = link_to("Visits", visit_index_path)
+  %li
+    = link_to("Locations", location_index_path)
+%br
+
 .subjects.index
   %h2 Manage Visits
   = link_to("Add New Vist", {action: 'new'}, class: 'action new')
@@ -13,10 +22,10 @@
     - @visits.each do |visit|
       %tr
         %td= visit.date
-        %td= visit.location.try(:name)
+        %td= visit.location.try(:name )
         %td= visit.community
         %td= visit.work
-        %td= visit.community
+        %td= visit.comments
 
         %td.actions
           = link_to("Show", {action: 'show', id: visit.id}, class: "action show")

@@ -1,3 +1,12 @@
+%ul
+  %li
+    = link_to("Home", '/')
+  %li
+    = link_to("Visits", visit_index_path)
+  %li
+    = link_to("Locations", location_index_path)
+%br
+
 .subjects.index
   %h2 Ohof Locations Index
   = link_to("Add New Location", {action: 'new'}, class: 'action new')
