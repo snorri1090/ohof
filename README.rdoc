@@ -4,13 +4,13 @@
 
 This stupid app is my first attempt at building a ruby on rails site and web application. I have been tracking the places around town I have been working, and wanted to move it out of the spreadsheet into something a little more dynamic. Tried the default WordPress site and didn't like my options, so trying my hand at building a Ruby on Rails application. 
 
-* Ruby version
+* Ruby version:
   **2.3.3p222
 
-* Database creation
+* Database creation:
   **Postgres 9.6.2
 
-* Deployment instructions
-Running on Heroku (ohof.herokuapp.com)
+* Deployment instructions:
+  **Running on Heroku (ohof.herokuapp.com)
 
 
