@@ -13,7 +13,7 @@
     - @visits.each do |visit|
       %tr
         %td= visit.date
-        %td location
+        %td= visit.location.try(:name)
         %td= visit.community
         %td= visit.work
         %td= visit.community

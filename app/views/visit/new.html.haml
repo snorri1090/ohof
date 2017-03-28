@@ -1,14 +1,17 @@
 = link_to("<< Back to Home", '/', class: 'back link')
-
-%h1 Add a New OHOF Visit
-
-%h2 Location
-%ul
-  %li Add a New Location
-  %li Use an existing Location
-
-%h2 Visit Details
 = form_for(:visit, url: {action: 'create'}) do |f|
+  %h1 Add a New OHOF Visit
+
+  %h2 Location
+  %ul
+    %li Select a Location
+    %li= f.collection_select(:location_id, Location.all, :id, :name)
+
+  %ul
+    %li New location not on the list?
+    %li= link_to("Add a New Location", location_new_path, class: 'back link')
+
+  %h2 Visit Details
   %ul
     %li
       date
