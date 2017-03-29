@@ -16,12 +16,13 @@
   %body
     %header
       .logo
-        OHOF (Tacoma)
+        = link_to("OHOF (Tacoma)", '/')
       %nav
         %ul
-          %li= link_to("Home", '/')
-          %li= link_to("Visits", visit_index_path)
-          %li= link_to("Locations", location_index_path)
+          %li= link_to("New Visit", visit_new_path)
+          %li= link_to("New Location", location_new_path)
+          %li= link_to("Manage Visits", visit_index_path)
+          %li= link_to("Manage Locations", location_index_path)
     %section
       = yield
     %footer
