@@ -13,7 +13,14 @@
 
   %body
     %header
+      .logo
+        OHOF (Tacoma)
       %nav
+        %ul
+          %li= link_to("Home", '/')
+          %li= link_to("Visits", visit_index_path)
+          %li= link_to("Locations", location_index_path)
     %section
       = yield
     %footer
+      copyright | Monkeyhouse Media | All Rights Reserved
