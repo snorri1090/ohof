@@ -6,7 +6,9 @@
     %meta{ content: "Tacoma | Home Office | coffee shop", :name => "keywords"}/
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
 
-    %title Out of Home Office: Tacoma
+    %title
+      Out of Home Office (Tacoma) |
+      = @page_title
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', type: "text/javascript"
     = csrf_meta_tags
