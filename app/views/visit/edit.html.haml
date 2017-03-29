@@ -1,2 +1,35 @@
-%h1 Visits#edit
-%p Find me in app/views/visits/edit.html.haml
+%ul
+  %li
+    = link_to("Home", '/')
+  %li
+    = link_to("Visits", visit_index_path)
+  %li
+    = link_to("Locations", location_index_path)
+%br
+
+= link_to("<< Back to List", {action: 'index'}, class: 'back link')
+
+.visits.edit
+  %h2 Update Location
+
+  = form_for(:visit, url: {action: 'update', id: @visit.id}) do |f|
+
+    %table{summary: "Visit form fields"}
+      %tr
+        %th Date
+        %td= f.date_field(:date, id: 'date')
+      %tr
+        %th Location
+        %td= f.collection_select(:location_id, Location.all, :id, :name)
+      %tr
+        %th Community
+        %td= f.text_area(:community)
+      %tr
+        %th Work
+        %td= f.text_area(:work)
+      %tr
+        %th Comments
+        %td= f.text_area(:comments)
+
+    .form.buttons
+      = submit_tag("Update Location")

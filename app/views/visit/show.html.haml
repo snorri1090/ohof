@@ -1,2 +1,30 @@
-%h1 Visits#show
-%p Find me in app/views/visits/show.html.haml
+%ul
+  %li
+    = link_to("Home", '/')
+  %li
+    = link_to("Visits", visit_index_path)
+  %li
+    = link_to("Locations", location_index_path)
+%br
+
+= link_to("<< Back to List", {action: 'index'}, class: 'back link')
+
+.subjects.show
+  %h2 Visit Details
+
+  %table{summary: 'Visit detail view'}
+    %tr
+      %th Date
+      %td= @visit.date
+    %tr
+      %th Location
+      %td= @visit.location.try("name")
+    %tr
+      %th Community Interaction
+      %td= @visit.community
+    %tr
+      %th Work Completed
+      %td= @visit.work
+    %tr
+      %th Other Comments
+      %td= @visit.comments

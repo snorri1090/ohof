@@ -46,15 +46,5 @@
         %th Additional Location Comments
         %td= f.text_area(:comments)
 
-    %hr
-    %h3 Additional Items. Move to Visits table when complete
-    %table{summary: "Additional Visit Information"}
-      %tr
-        %th Any Conversations?
-        %td= f.text_area(:work_done)
-      %tr
-        %th Did I get any work done?
-        %td= f.text_area(:conversation)
-    %br
     .form.buttons
       = submit_tag("Create Location")
