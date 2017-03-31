@@ -9,21 +9,22 @@
     %title
       Out of Home Office (Tacoma) |
       = @page_title
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', type: "text/javascript"
     = csrf_meta_tags
 
   %body
-    %header
-      .logo
-        = link_to("OHOF (Tacoma)", '/')
-      %nav
-        %ul
-          %li= link_to("New Visit", visit_new_path)
-          %li= link_to("New Location", location_new_path)
-          %li= link_to("Manage Visits", visit_index_path)
-          %li= link_to("Manage Locations", location_index_path)
-    %section
-      = yield
-    %footer
-      copyright | Monkeyhouse Media | All Rights Reserved
+    .container-fluid
+      %header
+        .logo
+        %nav
+          %ul.nav.nav-pills
+            %li= link_to("OHOF (Tacoma)", '/', role: "presentation", class: "btn-primary")
+            %li= link_to("New Visit", visit_new_path, role: "presentation", class: "btn-primary")
+            %li= link_to("New Location", location_new_path, role: "presentation", class: "btn-primary")
+            %li= link_to("Manage Visits", visit_index_path, role: "presentation", class: "btn-primary")
+            %li= link_to("Manage Locations", location_index_path, role: "presentation", class: "btn-primary")
+      %section
+        = yield
+      %footer
+        copyright | Monkeyhouse Media | All Rights Reserved

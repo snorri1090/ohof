@@ -136,7 +136,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-datepicker-rails
-  bootstrap-sass (~> 3.2.0)
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   haml-rails
   jbuilder (~> 2.0)
