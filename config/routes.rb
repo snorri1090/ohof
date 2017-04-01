@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'pages/about' 
+  get 'pages/features'
+  get 'pages/tips'
+
   get 'visit/index'
   get 'visit/new'
   get 'location/index'
