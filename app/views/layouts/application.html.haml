@@ -18,12 +18,7 @@
       %header
         .logo
         %nav
-          %ul.nav.nav-pills
-            %li= link_to("OHOF (Tacoma)", '/', role: "presentation", class: "btn-primary")
-            %li= link_to("New Visit", visit_new_path, role: "presentation", class: "btn-primary")
-            %li= link_to("New Location", location_new_path, role: "presentation", class: "btn-primary")
-            %li= link_to("Manage Visits", visit_index_path, role: "presentation", class: "btn-primary")
-            %li= link_to("Manage Locations", location_index_path, role: "presentation", class: "btn-primary")
+          = render partial: "layouts/nav"
       %section
         = yield
       %footer

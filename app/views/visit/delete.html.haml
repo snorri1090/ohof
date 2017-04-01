@@ -1,2 +1,16 @@
-%h1 Visits#delete
-%p Find me in app/views/visits/delete.html.haml
+= link_to("<< Back to List", {action: 'index'}, class: 'back link')
+
+.visits.delete
+  %h2 Delete Location
+
+  = form_for(:visit, url: {action: 'destroy', id: @visit.id}) do |f|
+    %p Are you sure you want to permanently delete this visit?
+    %p.reference.date
+      = @visit.date
+      %br
+      = @visit.location.try("name")
+      %br
+
+    %br
+    .form.buttons
+      = submit_tag("Delete Visit", class: "btn btn-primary")
