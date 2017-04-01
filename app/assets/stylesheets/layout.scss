@@ -1,7 +1,21 @@
+body {
+  background-color: #428bca;
+}
+
+.container-fluid {
+  width: 70%;
+  background: #ddd;
+  min-height: 100vh;
+}
+
 header {}
 
 nav {}
 
 section {}
 
-footer {}
+footer {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2em;
+}
