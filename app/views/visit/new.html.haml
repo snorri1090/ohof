@@ -2,13 +2,16 @@
   %h1 Add a New OHOF Visit
 
   %h2 Location
-  %ul
-    %li Select a Location
-    %li= f.collection_select(:location_id, Location.all, :id, :name)
+  .row
+    .col-md-4
+      %label Select a Location:
+      = f.collection_select(:location_id, Location.all, :id, :name)
 
-  %ul
-    %li New location not on the list?
-    %li= link_to("Add a New Location", location_new_path, class: 'back link')
+    .col-md-8
+      %p
+        %em
+          New location not on the list?
+      %p= link_to("Add a New Location", location_new_path, class: 'btn btn-primary')
 
   %h2 Visit Details
   %ul
@@ -33,4 +36,4 @@
 
     %br
     .form.buttons
-      = submit_tag("New Visit")
+      = submit_tag("New Visit", class: "btn btn-primary")
