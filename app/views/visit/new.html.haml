@@ -21,6 +21,7 @@
   %p
     %label{for: 'time_of_day'} Time of Day (pending):
     //= f.select :name, 'method', {options}, {:default => {:hour => '10', :minute => '30'}}
+    = f.time_field(:time_of_visit, :max => "23:30", :min => "05:30", :step => "00:30")
 
   %p
     %label{for: 'time_spent'} Duration of Visit:
