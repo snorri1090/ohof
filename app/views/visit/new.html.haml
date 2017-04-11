@@ -14,26 +14,34 @@
       %p= link_to("Add a New Location", location_new_path, class: 'btn btn-primary')
 
   %h2 Visit Details
-  %ul
-    %li
-      date
-      %br
-      = f.date_field(:date, id: 'date')
+  %p
+    %label{for: 'date'} Date of Visit:
+    = f.date_field(:date, id: 'date')
 
-    %li
-      community
-      %br
-      %td= f.text_area(:community)
-    %li
-      work
-      %br
-      %td= f.text_area(:work)
-    %li
-      Comments
-      %br
-      %td= f.text_area(:comments)
+  %p
+    %label{for: 'time_of_day'} Time of Day (pending):
+    //= f.select :name, 'method', {options}, {:default => {:hour => '10', :minute => '30'}}
 
+  %p
+    %label{for: 'time_spent'} Duration of Visit:
+    = f.text_field(:time_spent)
 
+  %p
+    %label{for: 'community'} Community: who did you talk to?
     %br
-    .form.buttons
-      = submit_tag("New Visit", class: "btn btn-primary")
+    = f.text_area(:community)
+
+  %p
+    %label{for: 'work'} Work: what did you do?
+    %br
+    = f.text_area(:work)
+
+  %p
+    %label{for: 'comments'} Comments
+    %br
+    = f.text_area(:comments)
+
+
+  %br
+  .form.buttons
+    = submit_tag("New Visit", class: "btn btn-primary")
