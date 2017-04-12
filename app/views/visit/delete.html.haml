@@ -1,7 +1,7 @@
 = link_to("<< Back to List", {action: 'index'}, class: 'back link')
 
 .visits.delete
-  %h2 Delete Location
+  %h2 Delete Visit
 
   = form_for(:visit, url: {action: 'destroy', id: @visit.id}) do |f|
     %p Are you sure you want to permanently delete this visit?

@@ -5,7 +5,7 @@
 
   = form_for(:location, url: {action: 'create'}) do |f|
 
-    %table{summary: "Location form fields"}
+    %table{summary: "Location form fields", class: "new"}
       %tr
         %th Name
         %td= f.text_field(:name)
@@ -38,4 +38,4 @@
         %td= f.text_area(:comments)
 
     .form.buttons
-      = submit_tag("Create Location")
+      = submit_tag("Create Location", class: "btn-lg btn-primary")
