@@ -1,5 +1,8 @@
+.logo
+  = link_to('/') do
+    = image_tag("logo-ohof.png")
+
 %ul.nav.nav-pills
-  %li= link_to("OHOF (Tacoma)", '/', role: "presentation")
   %li= link_to("Add New Visit", visit_new_path, role: "presentation")
   %li= link_to("Add New Location", location_new_path, role: "presentation")
   %li= link_to("Manage Visits", visit_index_path, role: "presentation")
