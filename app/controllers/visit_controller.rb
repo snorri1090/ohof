@@ -45,6 +45,6 @@ class VisitController < ApplicationController
 
   private
     def visit_params
-      params.require(:visit).permit(:date, :comments, :work, :community, :location_id, :time_of_day, :time_spentq)
+      params.require(:visit).permit(:date, :comments, :work, :community, :location_id, :time_of_visit, :time_spent)
     end
 end
