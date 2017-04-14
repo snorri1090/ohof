@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410232141) do
+ActiveRecord::Schema.define(version: 20170414160839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,35 @@ ActiveRecord::Schema.define(version: 20170410232141) do
 
   add_index "locations", ["name"], name: "index_locations_on_name", using: :btree
   add_index "locations", ["visit_id"], name: "index_locations_on_visit_id", using: :btree
+
+  create_table "pages", force: true do |t|
+    t.integer  "subject_id"
+    t.string   "name"
+    t.string   "permalink"
+    t.integer  "position"
+    t.boolean  "visible",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", force: true do |t|
+    t.integer  "page_id"
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",      default: false
+    t.string   "content_type"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subjects", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name", limit: 25
