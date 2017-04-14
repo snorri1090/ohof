@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414160839) do
+ActiveRecord::Schema.define(version: 20170414221616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 20170414160839) do
     t.datetime "updated_at"
     t.datetime "date"
     t.integer  "location_id"
-    t.integer  "time_of_visit"
     t.string   "time_spent",    limit: 50
+    t.string   "time_of_visit"
   end
 
   add_index "visits", ["location_id"], name: "index_visits_on_location_id", using: :btree
