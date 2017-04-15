@@ -8,6 +8,12 @@
       %th Date
       %td= @visit.date
     %tr
+      %th Time of Visit
+      %td= @visit.time_of_visit
+    %tr
+      %th Duration of Visit
+      %td= @visit.time_spent
+    %tr
       %th Location
       %td= @visit.location.try("name")
     %tr

@@ -17,13 +17,24 @@ class PagesController < ApplicationController
     if @page.save
       flash[:notice] = "Page created successfully."
       redirect_to(:action => 'index')
-
-  def about
+    else
+      render('new')
+    end
   end
 
-  def features
+  def delete
+    @page = Page.find(params[:id])
   end
 
-  def tips
+  def destroy
+    page = Page.find(params[:id]).destroy
+    flash[:notice] = "Page destroyed successfully."
   end
+
+  private
+
+  def page_params
+    params.require(:page).permit(:subject_id, :name, :permalink, :position, :visible)
+  end
+
 end

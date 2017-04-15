@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'visit/index'
-  get 'visit/new'
-  get 'location/index'
-  get 'location/new'
-
-  get 'root/index'
-  get 'demo/index'
-
   # You can have the root of your site routed with "root"
   root 'root#index'
+
+  get 'visits/' => 'visits#index'
+  get 'visits/new' => 'visits#new'
+  get 'visits/edit' => 'visits#edit'
+  get 'visits/show' => 'visits#show'
+
+  get 'locations/' => 'locations#index'
+  get 'locations/new' => 'locations#new'
+  get 'locations/edit' => 'locations#edit'
+  get 'locations/show' => 'locations#show'
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
 

@@ -1,2 +1,26 @@
-%h1 Visits#index
-%p Find me in app/views/visits/index.html.haml
+.subjects.index
+  %h2 Manage Visits
+  = link_to("Add New Vist", {action: 'new'}, class: 'action new')
+
+  %table.listing{summary: "Visit list", class: "crud"}
+    %tr.header
+      %th Date
+      %th Time of Visit
+      %th Location
+      %th Community
+      %th Work
+      %th Comments
+
+    - @visits.each do |visit|
+      %tr
+        %td= visit.date
+        %td= visit.time_of_visit
+        %td= visit.location.try(:name )
+        %td= visit.community
+        %td= visit.work
+        %td= visit.comments
+
+        %td.actions
+          = link_to("Show", {action: 'show', id: visit.id}, class: "action show")
+          = link_to("Edit", {action: 'edit', :id => visit.id}, class: "action edit")
+          = link_to("Delete", {action: 'delete', id: visit.id}, class: "action delete")

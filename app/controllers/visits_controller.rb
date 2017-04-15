@@ -1,4 +1,4 @@
-class VisitController < ApplicationController
+class VisitsController < ApplicationController
 
   def index
     @visits = Visit.all
@@ -23,6 +23,7 @@ class VisitController < ApplicationController
 
   def edit
     @visit = Visit.find(params[:id])
+    render('show')
   end
 
   def update
