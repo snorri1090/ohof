@@ -1,2 +1,23 @@
-%h1 Sections#index
-%p Find me in app/views/sections/index.html.haml
+- @page_title = "Sections"
+.sections.index
+  %h2 Sections
+  = link_to("Add New Section", {:action => 'new'}, :class => 'action new')
+  %table.listing{:summary => "Section list"}
+    %tr.header
+      %th  
+      %th Page ID
+      %th Section
+      %th Content Type
+      %th Visible
+      %th Actions
+    - @sections.each do |section|
+      %tr
+        %td= section.position
+        %td= section.page_id
+        %td= section.name
+        %td= section.content_type
+        %td.center= status_tag(section.visible)
+        %td.actions
+          = link_to("Show", {:action => 'show', :id => section.id}, :class => 'action show')
+          = link_to("Edit", {:action => 'edit', :id => section.id}, :class => 'action edit')
+          = link_to("Delete", {:action => 'delete', :id => section.id}, :class => 'action delete')

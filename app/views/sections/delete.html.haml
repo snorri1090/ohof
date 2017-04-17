@@ -1,2 +1,9 @@
-%h1 Sections#delete
-%p Find me in app/views/sections/delete.html.haml
+- @page_title = "Delete Section"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.sections.delete
+  %h2 Delete Section
+  = form_for(:section, :url => {:action => 'destroy', :id => @section.id}) do |f|
+    %p Are you sure you want to permanently delete this section?
+    %p.reference-name= @section.name
+    .form-buttons
+      = submit_tag("Delete Section")

@@ -1,2 +1,8 @@
-%h1 Sections#edit
-%p Find me in app/views/sections/edit.html.haml
+- @page_title = "Edit Section"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.sections.edit
+  %h2 Update Section
+  = form_for(:section, :url => {:action => 'update', :id => @section.id}) do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Update Section")

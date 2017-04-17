@@ -1,2 +1,8 @@
-%h1 Subjects#new
-%p Find me in app/views/subjects/new.html.haml
+- @page_title = "New Subject"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.subjects.new
+  %h2 Create Subject
+  = form_for(:subject, :url => {:action => 'create'}) do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Create Subject")

@@ -1,0 +1,26 @@
+- @page_title = "Show Page"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.pages.show
+  %h2 Show Page
+  %table{:summary => "Page detail view"}
+    %tr
+      %th Subject ID
+      %td= @page.subject_id
+    %tr
+      %th Name
+      %td= @page.name
+    %tr
+      %th Permalink
+      %td= @page.permalink
+    %tr
+      %th Position
+      %td= @page.position
+    %tr
+      %th Visible?
+      %td= @page.visible ? 'true' : 'false'
+    %tr
+      %th Created
+      %td= @page.created_at
+    %tr
+      %th Updated
+      %td= @page.updated_at

@@ -1,2 +1,9 @@
-%h1 Subjects#delete
-%p Find me in app/views/subjects/delete.html.haml
+- @page_title = "Delete Subject"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.subjects.delete
+  %h2 Delete Subject
+  = form_for(:subject, :url => {:action => 'destroy', :id => @subject.id}) do |f|
+    %p Are you sure you want to permanently delete this subject?
+    %p.reference-name= @subject.name
+    .form-buttons
+      = submit_tag("Delete Subject")

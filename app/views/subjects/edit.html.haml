@@ -1,2 +1,8 @@
-%h1 Subjects#edit
-%p Find me in app/views/subjects/edit.html.haml
+- @page_title = "Update Subject"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.subjects.edit
+  %h2 Update Subject
+  = form_for(:subject, :url => {:action => 'update', :id => @subject.id}) do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Update Subject")

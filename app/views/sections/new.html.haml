@@ -1,2 +1,8 @@
-%h1 Sections#new
-%p Find me in app/views/sections/new.html.haml
+- @page_title = "New Section"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.sections.new
+  %h2 Create Section
+  = form_for(:section, :url => {:action => 'create'}) do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Create Section")

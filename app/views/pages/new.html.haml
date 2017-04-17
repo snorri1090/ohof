@@ -1,0 +1,8 @@
+- @page_title = "New Page"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.pages.new
+  %h2 Create Page
+  = form_for(:page, :url => {:action => 'create'}) do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Create Page")

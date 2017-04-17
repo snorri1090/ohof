@@ -1,2 +1,20 @@
-%h1 Subjects#show
-%p Find me in app/views/subjects/show.html.haml
+- @page_title = "Show Subject"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.subjects.show
+  %h2 Show Subject
+  %table{:summary => "Subject detail view"}
+    %tr
+      %th Name
+      %td= @subject.name
+    %tr
+      %th Position
+      %td= @subject.position
+    %tr
+      %th Visible?
+      %td= @subject.visible ? 'true' : 'false'
+    %tr
+      %th Created
+      %td= @subject.created_at
+    %tr
+      %th Updated
+      %td= @subject.updated_at
