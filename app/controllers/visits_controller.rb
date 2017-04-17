@@ -23,7 +23,6 @@ class VisitsController < ApplicationController
 
   def edit
     @visit = Visit.find(params[:id])
-    render('show')
   end
 
   def update
