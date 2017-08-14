@@ -1,10 +1,10 @@
 %table{:summary => "Subject form fields"}
   %tr
-    %th Name
+    %th= f.label(:name, "Name:")
     %td= f.text_field(:name)
   %tr
-    %th Position
-    %td= f.text_field(:position)
+    %th= f.label(:position, "Position:")
+    %td= f.select(:position, 1..@subject_count)
   %tr
-    %th Visible
-    %td= f.text_field(:visible)
+    %th= f.label(:visible)
+    %td= f.check_box(:visible)

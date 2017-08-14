@@ -5,7 +5,7 @@
   %table.listing{:summary => "Page list"}
     %tr.header
       %th  
-      %th Subject ID
+      %th Subject
       %th Page
       %th Permalink
       %th Visible
@@ -14,7 +14,7 @@
     - @pages.each do |page|
       %tr
         %td= page.position
-        %td= page.subject_id
+        %td= page.subject.name if page.subject
         %td= page.name
         %td= page.permalink
         %td.center= status_tag(page.visible)

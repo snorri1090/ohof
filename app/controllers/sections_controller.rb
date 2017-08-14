@@ -10,6 +10,7 @@ class SectionsController < ApplicationController
 
   def new
     @section = Section.new({:name => "Default"})
+    @section = Section.count + 1
   end
 
   def create
@@ -18,11 +19,13 @@ class SectionsController < ApplicationController
       flash[:notice] = "Section created successfully."
       redirect_to(:action => 'index')
     else
+      @section = Section.count + 1
       render('new')
     end
   end
 
   def edit
+    @section = Section.count
     @section = Section.find(params[:id])
   end
 

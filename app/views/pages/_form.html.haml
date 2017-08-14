@@ -1,16 +1,16 @@
 %table{:summary => "Page form fields"}
   %tr
-    %th Subject ID
-    %td= f.text_field(:subject_id)
+    %th= f.label(:subject_id, "Subject")
+    %td= f.select(:subject_id, @subjects.map {|s| [s.name, s.id]})
   %tr
-    %th Name
+    %th= f.label(:name, "Name")
     %td= f.text_field(:name)
   %tr
-    %th Permalink
+    %th= f.label(:permalink)
     %td= f.text_field(:permalink)
   %tr
-    %th Position
-    %td= f.text_field(:position)
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@page_count)
   %tr
-    %th Visible
+    %th= f.label(:visible)
     %td= f.text_field(:visible)
