@@ -20,7 +20,7 @@
 
   %p
     %label{for: 'time_of_visit'} Time of Day:
-    = f.time_field(:time_of_visit, :max => "23:30", :min => "05:30", :step => "00:30")
+    = f.time_select(:time_of_visit, :ampm => true, :order => [:month, :day, :year])
 
   %p
     %label{for: 'time_spent'} Duration of Visit:

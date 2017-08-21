@@ -11,7 +11,8 @@
         %td
           %th Time of Day:
           %td
-            = f.time_field(:time_of_visit)
+            = f.time_select(:time_of_visit, :order => [:month, :day, :year], :ampm => true)
+
       %tr
         %td
           %th Duration of Visit:

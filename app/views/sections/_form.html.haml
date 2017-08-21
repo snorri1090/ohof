@@ -1,7 +1,9 @@
+= error_messages_for(@section)
+
 %table{:summary => "Section form fields"}
   %tr
     %th= f.label(:page_id, "Page ID")
-    %td= f.select(:page_id, @pages.collect {|p| [p.name, p.id]})
+    %td= f.select(:page_id, @pages.map {|p| [p.name, p.id]})
   %tr
     %th= f.label(:name, "Name")
     %td= f.text_field(:name)
